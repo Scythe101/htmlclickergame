@@ -1,0 +1,30 @@
+.myDiv{
+    color: red;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+#myDiv2{
+    color: blue;
+    border: 2px dashed black;
+    border-radius: 5px;
+    background-color: aliceblue;
+    padding: 4px;
+}
+
+#myDiv2 p{
+    padding: 20px;
+}
+
+#btn{
+    background-color: white;
+    border: 2px solid black;
+    padding:10px;
+    border-radius: 3px;
+}
+
+#number{
+    font-size: 18px; 
+}
