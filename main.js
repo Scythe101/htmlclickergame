@@ -1,7 +1,7 @@
 var number = 0
-
+var cpc=1
 function addOne(){
-    number += 1
+    number += cpc
     
     document.getElementById("number").innerHTML = number;
     save();
@@ -14,6 +14,7 @@ function getNumber(){
 
 function save(){
     localStorage.setItem("num", number);
+    localStorage.setItem("cpc", cpc)
 }
 
 function load(){
@@ -27,5 +28,9 @@ function reset(){
 }
 
 function buyUpgradeOne(){
-    addOne();
+    if (number >= 100){
+        number-=100
+        cpc+=1
+    }
+    save();
 }
