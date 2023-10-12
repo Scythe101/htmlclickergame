@@ -1,9 +1,9 @@
 .myDiv{
-    color: orchid;
+    color:mediumslateblue;
     border: 2px solid black;
     border-radius: 10px;
     text-align: center;
-    background-color: rgb(242, 192, 240);
+    background-color: rgb(185, 175, 240);
 }
 
 #myDiv2{
