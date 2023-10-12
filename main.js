@@ -38,5 +38,6 @@ function buyUpgradeOne(){
 }
 
 function displayNumChange(){
-    document.getElementById("number").innerHTML = number;
+    document.getElementById("number").innerHTML = "$" + number;
+    document.getElementById("cpc").innerHTML = "Dollars per Click: " + cpc;
 }
