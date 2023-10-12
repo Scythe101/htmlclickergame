@@ -39,8 +39,8 @@ function load(){
 }
 
 function reset(){
-    //if (confirm("Are you sure you want to do that?") === true){
-        //if (confirm("Are you really, truly sure???") === true){
+    if (confirm("Are you sure you want to do that?") === true){
+        if (confirm("Are you really, truly sure???") === true){
             number = 0;
             cpc = 1;
             upgrOneVal = 0;
@@ -50,8 +50,8 @@ function reset(){
             mult = 1;
             save();
             displayNumChange();
-        //}
-    //}
+        }
+    }
 }
 
 function buyUpgradeOne(){
