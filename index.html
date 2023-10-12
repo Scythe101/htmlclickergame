@@ -23,17 +23,20 @@
         <p>click button make number go up</p>
     </div>
     <button onClick = "addOne()" class="btn">Click Me!</button>
-    
-    <button onClick = "reset()" class="btn">reset (for dev purposes)</button>
     <p id="number">0</p>
     <p id="cpc">0</p>
+    <p id="cps">0</p>
     <div id="shop">
         <h3>Shop</h3>
         <button onClick="buyUpgradeOne()" class="btn" id="upgradeOne" title="Increase dollars per click by 1">Upgrade One: $100</button>
-        <!--br>
         <br>
-        <button onClick="buyUpgradeTwo()" class="btn" title="Increase cookies per second by 1">Upgrade Two: $500</button-->
+        <br>
+        <button onClick="buyUpgradeTwo()" class="btn" id="upgradeTwo" title="Increase cookies per second by 1">Upgrade Two: $500</button>
     </div>
+    <br>
+    <br>
+    <br>
+    <button onClick = "reset()" class="reset">Reset</button>
 </body>
 
 <script src = "main.js"></script>

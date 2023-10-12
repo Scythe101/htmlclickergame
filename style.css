@@ -25,6 +25,13 @@
     border-radius: 3px;
 }
 
+.reset{
+    background-color: red;
+    border: 2px solid black;
+    padding:10px;
+    border-radius: 3px;
+}
+
 #number{
     font-size: 18px; 
 }
