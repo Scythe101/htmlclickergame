@@ -3,6 +3,8 @@ var cpc=1
 var cps=0
 var upgrOneVal=0
 var upgrTwoVal=0
+var upgrThreeVal=0
+var mult=1
 function addOne(){
     number += cpc;
     
@@ -21,6 +23,8 @@ function save(){
     localStorage.setItem("cps", cps)
     localStorage.setItem("upgrOneVal", upgrOneVal);
     localStorage.setItem("upgrTwoVal", upgrTwoVal);
+    localStorage.setItem("upgrThreeVal", upgrThreeVal);
+    localStorage.setItem("mult", mult);
 }
 
 
@@ -31,37 +35,49 @@ function load(){
     upgrOneVal = parseInt(localStorage.getItem("upgrOneVal"));
     upgrTwoVal = parseInt(localStorage.getItem("upgrTwoVal"));
     cps = parseInt(localStorage.getItem("cps"));
+    upgrThreeVal = parseInt(localStorage.getItem("cps"));
     displayNumChange();
 }
 
 function reset(){
-    if (confirm("Are you sure you want to reset?") === true){
-        number = 0;
-        cpc = 1;
-        upgrOneVal = 0;
-        cps = 0;
-        upgrTwoVal = 0;
-        save();
-        displayNumChange();
+    if (confirm("Are you sure you want to do that?") === true){
+        if (confirm("Are you really, truly sure???") === true){
+            number = 0;
+            cpc = 1;
+            upgrOneVal = 0;
+            cps = 0;
+            upgrTwoVal = 0;
+            save();
+            displayNumChange();
+        }
     }
 }
 
 function buyUpgradeOne(){
-    if (number >= 100+50*(upgrOneVal)){
-        number-=100+50*(upgrOneVal);
+    if (number >= 25*(2**upgrOneVal)){
+        number-= 25*(2**upgrOneVal);
         cpc+=1;
         upgrOneVal+=1;
     }
     displayNumChange();
     save();
-    save();
 }
 
 function buyUpgradeTwo(){
-    if (number >= 500+100*(upgrTwoVal)){
-        number-=500+100*(upgrTwoVal);
+    if (number >= 200*(2**upgrTwoVal)){
+        number-= 200*(2**upgrTwoVal);
         cps+=1;
         upgrTwoVal+=1;
+    }
+    displayNumChange();
+    save();
+}
+
+function buyUpgradeThree(){
+    if (number >= 1600*(2**upgrTwoVal)){
+        number-= 1600*(2**upgrTwoVal);
+        mult+=0.25;
+        upgrThreeVal+=1;
     }
     displayNumChange();
     save();
@@ -72,13 +88,15 @@ function displayNumChange(){
     document.getElementById("number").innerHTML = "$" + number;
     document.getElementById("cpc").innerHTML = "Dollars per Click: " + cpc;
     document.getElementById("cps").innerHTML = "Dollars per Second: " + cps;
-    document.getElementById("upgradeOne").innerHTML = "Upgrade One: $" + (100+50*(upgrOneVal));
-    document.getElementById("upgradeTwo").innerHTML = "Upgrade Two: $" + (500+100*(upgrTwoVal));
+    document.getElementById("upgradeOne").innerHTML = "Upgrade One: $" + 25*(2**upgrOneVal);
+    document.getElementById("upgradeTwo").innerHTML = "Upgrade Two: $" + 200*(2**upgrTwoVal);
+    document.getElementById("upgradeThree").innerHTML = "Upgrade Three: $" + 1600*(2**upgrThreeVal);
 }
 
 
 function myTimer() {
-    number += cps;
+    number += Math.floor(cps*mult);
+    save();
     displayNumChange();
 }
 setInterval(myTimer, 1000);
