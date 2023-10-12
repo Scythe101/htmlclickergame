@@ -11,21 +11,20 @@
 
     <link rel = stylesheet href = "style.css">
 </head>
-
-<body>
+<body onload="load()">
     <p></p>
 
     <div class="myDiv">
-        <h1>Fake cookie clicker</h1>
-        <p>bottom text</p>
+        <h1>HTML Clicker Game</h1>
+        <p>by Scythe Game Studios</p>
     </div>
 
     <div id="myDiv2">
-        <p>click button make number go up</p>
+        <p>click button make number go up
+        </p>
     </div>
-    <button onClick = "addOne()" id="btn">Cookie</button>
-    <button onClick = "save()" id="btn">Save</button>
-    <button onClick = "load()" id="btn">Load</button>
+    <button onClick = "addOne()" id="btn">Click Me!</button>
+    
     <!--button onClick = "reset()" id="btn">reset (for dev purposes)</button-->
     <p id="number">0</p>
 </body>

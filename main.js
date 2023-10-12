@@ -4,7 +4,7 @@ function addOne(){
     number += 1
     
     document.getElementById("number").innerHTML = number;
-    localStorage.setItem("number") = number;
+    save();
 }
 
 function getNumber(){
