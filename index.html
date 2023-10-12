@@ -20,17 +20,19 @@
     </div>
 
     <div id="myDiv2">
-        <p>click button make number go up
-        </p>
+        <p>click button make number go up</p>
     </div>
-    <button onClick = "addOne()" id="btn">Click Me!</button>
+    <button onClick = "addOne()" class="btn">Click Me!</button>
     
-    <!--button onClick = "reset()" id="btn">reset (for dev purposes)</button-->
+    <button onClick = "reset()" class="btn">reset (for dev purposes)</button>
     <p id="number">0</p>
     <p id="cpc">0</p>
     <div id="shop">
         <h3>Shop</h3>
-        <button onClick="buyUpgradeOne()" id="btn">Upgrade One $100</button>
+        <button onClick="buyUpgradeOne()" class="btn" id="upgradeOne" title="Increase dollars per click by 1">Upgrade One: $100</button>
+        <!--br>
+        <br>
+        <button onClick="buyUpgradeTwo()" class="btn" title="Increase cookies per second by 1">Upgrade Two: $500</button-->
     </div>
 </body>
 
