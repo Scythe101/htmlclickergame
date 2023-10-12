@@ -3,28 +3,28 @@ var cpc=1
 function addOne(){
     number += cpc
     
-    document.getElementById("number").innerHTML = number;
+    displayNumChange();
     save();
 }
 
 function getNumber(){
     number = localStorage.getItem("number");
-    addOne();
+    displayNumChange();
 }
 
 function save(){
     localStorage.setItem("num", number);
-    localStorage.setItem("cpc", cpc)
+    localStorage.setItem("cpc", cpc);
 }
 
 function load(){
-    number = parseInt(localStorage.getItem("num"))-1;
-    addOne();
+    number = parseInt(localStorage.getItem("num"));
+    displayNumChange();
 }
 
 function reset(){
-    number = -1;
-    addOne();
+    number = 0;
+    displayNumChange();
 }
 
 function buyUpgradeOne(){
@@ -32,5 +32,10 @@ function buyUpgradeOne(){
         number-=100
         cpc+=1
     }
+    displayNumChange();
     save();
+}
+
+function displayNumChange(){
+    document.getElementById("number").innerHTML = number;
 }
