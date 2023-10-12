@@ -19,6 +19,7 @@ function save(){
 
 function load(){
     number = parseInt(localStorage.getItem("num"));
+    cpc = parseInt(localStorage.getItem("cpc"));
     displayNumChange();
 }
 
