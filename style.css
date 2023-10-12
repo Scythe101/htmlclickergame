@@ -28,3 +28,9 @@
 #number{
     font-size: 18px; 
 }
+
+#shop{
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px;
+}

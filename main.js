@@ -25,3 +25,7 @@ function reset(){
     number = -1;
     addOne();
 }
+
+function buyUpgradeOne(){
+    addOne();
+}
