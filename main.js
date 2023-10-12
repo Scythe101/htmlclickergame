@@ -4,6 +4,7 @@ var cps=0
 var upgrOneVal=0
 var upgrTwoVal=0
 var upgrThreeVal=0
+var upgrFourVal=0
 var mult=1
 function addOne(){
     number += Math.floor(cpc*mult);
@@ -23,6 +24,7 @@ function save(){
     localStorage.setItem("upgrOneVal", upgrOneVal);
     localStorage.setItem("upgrTwoVal", upgrTwoVal);
     localStorage.setItem("upgrThreeVal", upgrThreeVal);
+    localStorage.setItem("upgrFourVal", upgrFourVal);
     localStorage.setItem("mult", mult);
 }
 
@@ -35,6 +37,8 @@ function load(){
     upgrTwoVal = parseInt(localStorage.getItem("upgrTwoVal"));
     cps = parseInt(localStorage.getItem("cps"));
     upgrThreeVal = parseInt(localStorage.getItem("upgrThreeVal"));
+    mult = parseInt(localStorage,getItem("mult"))
+    upgrFourVal = parseInt(localStorage.getItem("upgrFourVal"))
     displayNumChange();
 }
 
@@ -48,6 +52,7 @@ function reset(){
             upgrTwoVal = 0;
             upgrThreeVal = 0;
             mult = 1;
+            upgrFourVal = 0;
             save();
             displayNumChange();
         }
@@ -84,6 +89,15 @@ function buyUpgradeThree(){
     save();
 }
 
+function buyUpgradeFour(){
+    if (number >= Math.floor(8000 *(1.75**upgrFourVal))){
+        number-= Math.floor(8000 *(1.75**upgrFourVal));
+        cpc += 5;
+        upgrFourVal+=1;
+    }
+    displayNumChange();
+    save();
+}
 
 function displayNumChange(){
     document.getElementById("number").innerHTML = "$" + number;
@@ -93,6 +107,7 @@ function displayNumChange(){
     document.getElementById("upgradeOne").innerHTML = "Upgrade One: $" + 25*(2**upgrOneVal);
     document.getElementById("upgradeTwo").innerHTML = "Upgrade Two: $" + 200*(2**upgrTwoVal);
     document.getElementById("upgradeThree").innerHTML = "Upgrade Three: $" + 1600*(2**upgrThreeVal);
+    document.getElementById("upgradeFour").innerHTML = "Upgrade Four: $" + Math.floor(8000 *(1.75**upgrFourVal));
 }
 
 
