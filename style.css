@@ -5,7 +5,12 @@
     text-align: center;
     background-color: rgb(185, 175, 240);
 }
-
+#main{
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
 #myDiv2{
     color: blue;
     border: 2px dashed black;
