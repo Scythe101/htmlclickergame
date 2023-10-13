@@ -46,7 +46,7 @@ function reset(){
     if (confirm("Are you sure you want to do that?") === true){
         if (confirm("Are you really, truly sure???") === true){
             number = 0;
-            cpc = 100;
+            cpc = 1;
             upgrOneVal = 0;
             cps = 0;
             upgrTwoVal = 0;
