@@ -1,11 +1,11 @@
-var number = 0;
-var cpc=1;
-var cps=0;
-var upgrOneVal=0;
-var upgrTwoVal=0;
-var upgrThreeVal=0;
-var upgrFourVal=0;
-var mult=1;
+let number = 0;
+let cpc=1;
+let cps=0;
+let upgrOneVal=0;
+let upgrTwoVal=0;
+let upgrThreeVal=0;
+let upgrFourVal=0;
+let mult=1;
 function addOne(){
     number += Math.floor(cpc*mult);
     displayNumChange();
@@ -37,8 +37,8 @@ function load(){
     upgrTwoVal = parseInt(localStorage.getItem("upgrTwoVal"));
     cps = parseInt(localStorage.getItem("cps"));
     upgrThreeVal = parseInt(localStorage.getItem("upgrThreeVal"));
-    mult = parseInt(localStorage,getItem("mult"))
-    upgrFourVal = parseFloat(localStorage.getItem("upgrFourVal"))
+    mult = parseFloat(localStorage.getItem("mult"));
+    upgrFourVal = parseInt(localStorage.getItem("upgrFourVal"));
     displayNumChange();
 }
 
@@ -46,7 +46,7 @@ function reset(){
     if (confirm("Are you sure you want to do that?") === true){
         if (confirm("Are you really, truly sure???") === true){
             number = 0;
-            cpc = 1;
+            cpc = 100;
             upgrOneVal = 0;
             cps = 0;
             upgrTwoVal = 0;
