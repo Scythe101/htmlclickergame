@@ -1,11 +1,11 @@
-var number = 0
-var cpc=1
-var cps=0
-var upgrOneVal=0
-var upgrTwoVal=0
-var upgrThreeVal=0
-var upgrFourVal=0
-var mult=1
+var number = 0;
+var cpc=1;
+var cps=0;
+var upgrOneVal=0;
+var upgrTwoVal=0;
+var upgrThreeVal=0;
+var upgrFourVal=0;
+var mult=1;
 function addOne(){
     number += Math.floor(cpc*mult);
     displayNumChange();
@@ -43,8 +43,8 @@ function load(){
 }
 
 function reset(){
-    if (confirm("Are you sure you want to do that?") === true){
-        if (confirm("Are you really, truly sure???") === true){
+    //if (confirm("Are you sure you want to do that?") === true){
+        //if (confirm("Are you really, truly sure???") === true){
             number = 0;
             cpc = 1;
             upgrOneVal = 0;
@@ -55,8 +55,8 @@ function reset(){
             upgrFourVal = 0;
             save();
             displayNumChange();
-        }
-    }
+        //}
+    //}
 }
 
 function buyUpgradeOne(){
@@ -116,4 +116,25 @@ function myTimer() {
     save();
     displayNumChange();
 }
+
+
+var count = 0;
+var numSec = 1;
+var start = 0;
+window.addEventListener("click", function() {
+  count++;
+  start++;
+  //clicks.innerHTML = start;
+});
+
+getCPS();
+
+function getCPS() {
+  setTimeout(function() {
+    document.getElementById("cpscounter").innerHTML = "Clicks Per Second: " + count;
+    count = 0;
+    getCPS();
+  }, numSec*1000);
+}
+
 setInterval(myTimer, 1000);
