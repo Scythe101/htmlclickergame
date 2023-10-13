@@ -38,7 +38,7 @@ function load(){
     cps = parseInt(localStorage.getItem("cps"));
     upgrThreeVal = parseInt(localStorage.getItem("upgrThreeVal"));
     mult = parseInt(localStorage,getItem("mult"))
-    upgrFourVal = parseInt(localStorage.getItem("upgrFourVal"))
+    upgrFourVal = parseFloat(localStorage.getItem("upgrFourVal"))
     displayNumChange();
 }
 
