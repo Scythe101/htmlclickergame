@@ -20,7 +20,7 @@ function getNumber(){
 function save(){
     localStorage.setItem("num", number);
     localStorage.setItem("cpc", cpc);
-    localStorage.setItem("cps", cps)
+    localStorage.setItem("cps", cps);
     localStorage.setItem("upgrOneVal", upgrOneVal);
     localStorage.setItem("upgrTwoVal", upgrTwoVal);
     localStorage.setItem("upgrThreeVal", upgrThreeVal);
