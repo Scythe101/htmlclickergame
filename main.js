@@ -26,37 +26,51 @@ function save(){
     localStorage.setItem("upgrThreeVal", upgrThreeVal);
     localStorage.setItem("upgrFourVal", upgrFourVal);
     localStorage.setItem("mult", mult);
+    localStorage.setItem("saved", true)
 }
 
 
 
 function load(){
-    number = parseInt(localStorage.getItem("num"));
-    cpc = parseInt(localStorage.getItem("cpc"));
-    upgrOneVal = parseInt(localStorage.getItem("upgrOneVal"));
-    upgrTwoVal = parseInt(localStorage.getItem("upgrTwoVal"));
-    cps = parseInt(localStorage.getItem("cps"));
-    upgrThreeVal = parseInt(localStorage.getItem("upgrThreeVal"));
-    mult = parseFloat(localStorage.getItem("mult"));
-    upgrFourVal = parseInt(localStorage.getItem("upgrFourVal"));
-    displayNumChange();
+    if (localStorage.getItem("saved")) {
+        number = parseInt(localStorage.getItem("num"));
+        cpc = parseInt(localStorage.getItem("cpc"));
+        upgrOneVal = parseInt(localStorage.getItem("upgrOneVal"));
+        upgrTwoVal = parseInt(localStorage.getItem("upgrTwoVal"));
+        cps = parseInt(localStorage.getItem("cps"));
+        upgrThreeVal = parseInt(localStorage.getItem("upgrThreeVal"));
+        mult = parseFloat(localStorage.getItem("mult"));
+        upgrFourVal = parseInt(localStorage.getItem("upgrFourVal"));
+        displayNumChange();
+    } else {
+        reset(true)
+    }
 }
 
-function reset(){
-    if (confirm("Are you sure you want to do that?") === true){
-        if (confirm("Are you really, truly sure???") === true){
-            number = 0;
-            cpc = 1;
-            upgrOneVal = 0;
-            cps = 0;
-            upgrTwoVal = 0;
-            upgrThreeVal = 0;
-            mult = 1;
-            upgrFourVal = 0;
-            save();
-            displayNumChange();
+function reset(bypass){
+    if (!bypass) {
+        var doit = false
+        if (confirm("Are you sure you want to do that?")) {
+            if (confirm("Are you really, truly sure???")) {
+                doit = true
+            }
+        }
+
+        if (!doit) {
+            return
         }
     }
+    
+    number = 0;
+    cpc = 1;
+    upgrOneVal = 0;
+    cps = 0;
+    upgrTwoVal = 0;
+    upgrThreeVal = 0;
+    mult = 1;
+    upgrFourVal = 0;
+    save();
+    displayNumChange();
 }
 
 function buyUpgradeOne(){
@@ -104,10 +118,10 @@ function displayNumChange(){
     document.getElementById("cpc").innerHTML = "Dollars per Click: " + cpc;
     document.getElementById("cps").innerHTML = "Dollars per Second: " + cps;
     document.getElementById("mult").innerHTML = "Multiplier: " + mult + "x";
-    document.getElementById("upgradeOne").innerHTML = "Upgrade One: $" + 25*(2**upgrOneVal);
-    document.getElementById("upgradeTwo").innerHTML = "Upgrade Two: $" + 200*(2**upgrTwoVal);
-    document.getElementById("upgradeThree").innerHTML = "Upgrade Three: $" + 1600*(2**upgrThreeVal);
-    document.getElementById("upgradeFour").innerHTML = "Upgrade Four: $" + Math.floor(8000 *(1.75**upgrFourVal));
+    document.getElementById("upgradeOne").innerHTML = "Upgrade Dollars / Click: $" + 25*(2**upgrOneVal);
+    document.getElementById("upgradeTwo").innerHTML = "Upgrade Dollars / Second: $" + 200*(2**upgrTwoVal);
+    document.getElementById("upgradeThree").innerHTML = "Upgrade Multiplier: $" + 1600*(2**upgrThreeVal);
+    document.getElementById("upgradeFour").innerHTML = "Upgrade Dollars / Click x5: $" + Math.floor(8000 *(1.75**upgrFourVal));
 }
 
 
@@ -122,19 +136,19 @@ var count = 0;
 var numSec = 1;
 var start = 0;
 window.addEventListener("click", function() {
-  count++;
-  start++;
+    count++;
+    start++;
   //clicks.innerHTML = start;
 });
 
 getCPS();
 
 function getCPS() {
-  setTimeout(function() {
-    document.getElementById("cpscounter").innerHTML = "Clicks Per Second: " + count;
-    count = 0;
-    getCPS();
-  }, numSec*1000);
+    setTimeout(function() {
+        document.getElementById("cpscounter").innerHTML = "CPS: " + count;
+        count = 0;
+        getCPS();
+    }, numSec*1000);
 }
 
 setInterval(myTimer, 1000);
