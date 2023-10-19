@@ -6,6 +6,9 @@ let upgrTwoVal=0;
 let upgrThreeVal=0;
 let upgrFourVal=0;
 let mult=1;
+let upgrFiveVal=0;
+let goal=0;
+let upgrSixVal=0;
 function addOne(){
     number += Math.floor(cpc*mult);
     displayNumChange();
@@ -28,6 +31,8 @@ function save(){
     localStorage.setItem("mult", mult);
     localStorage.setItem("saved", true);
     localStorage.setItem("goal", goal);
+    localStorage.setItem("upgrSixVal", upgrSixVal);
+    localStorage.setItem("upgrFiveVal", upgrFiveVal);
 }
 
 
@@ -43,6 +48,8 @@ function load(){
         mult = parseFloat(localStorage.getItem("mult"));
         upgrFourVal = parseInt(localStorage.getItem("upgrFourVal"));
         goal = parseFloat(localStorage.getItem("goal"));
+        upgrFiveVal = parseInt(localStorage.getItem("upgrFiveVal"));
+        upgrSixVal = parseInt(localStorage.getItem("upgrSixVal"));
         displayNumChange();
     } else {
         reset(true)
@@ -65,12 +72,15 @@ function reset(bypass){
     
     number = 0;
     cpc = 1;
+    goal= 0;
     upgrOneVal = 0;
     cps = 0;
     upgrTwoVal = 0;
     upgrThreeVal = 0;
     mult = 1;
     upgrFourVal = 0;
+    upgrFiveVal = null;
+    upgrSixVal = 0;
     save();
     displayNumChange();
 }
@@ -115,6 +125,26 @@ function buyUpgradeFour(){
     save();
 }
 
+function buyUpgradeFive(){
+    if (number >= Math.floor(20000 *(1.75**upgrFiveVal))){
+        number-= Math.floor(20000 *(1.75**upgrFiveVal));
+        cps += 5;
+        upgrFiveVal+=1;
+    }
+    displayNumChange();
+    save();
+}
+
+function buyUpgradeSix(){
+    if (number >= Math.floor(100000 *(1.75**upgrSixVal))){
+        number-= Math.floor(100000 *(1.75**upgrSixVal));
+        mult += 1;
+        upgrSixVal+=1;
+    }
+    displayNumChange();
+    save();
+}
+
 function displayNumChange(){
     document.getElementById("number").innerHTML = "$" + number;
     document.getElementById("cpc").innerHTML = "Dollars per Click: " + cpc;
@@ -124,9 +154,10 @@ function displayNumChange(){
     document.getElementById("upgradeTwo").innerHTML = "Upgrade Dollars per Second by 1: $" + 200*(2**upgrTwoVal);
     document.getElementById("upgradeThree").innerHTML = "Upgrade Multiplier by 0.25x: $" + 1600*(2**upgrThreeVal);
     document.getElementById("upgradeFour").innerHTML = "Upgrade Dollars per Click by 5: $" + Math.floor(8000 *(1.75**upgrFourVal));
+    document.getElementById("upgradeFive").innerHTML = "Upgrade Dollars per Second by 5: $" + Math.floor(20000 *(1.75**upgrFiveVal));
+    document.getElementById("upgradeSix").innerHTML = "Upgrade Multiplier by 1x: $" + Math.floor(100000 *(1.75**upgrSixVal));
     document.getElementById('goal').innerHTML = "Goal: $" + goal;
 }
-
 
 function myTimer() {
     number += Math.floor(cps*mult);
@@ -172,6 +203,41 @@ function setGoal() {
         displayNumChange();
         save();
     }
+}
+
+function fix(){
+    if (Number.isNaN(mult)){
+        mult=1;
+    }
+    if (Number.isNaN(cps)){
+        cps=0;
+    }
+    if (Number.isNaN(number)){
+        number=0;
+    }
+    if (Number.isNaN(cpc)){
+        cpc=0;
+    }
+    if (Number.isNaN(upgrOneVal)){
+        upgrOneVal=0;
+    }
+    if (Number.isNaN(upgrTwoVal)){
+        upgrTwoVal=0;
+    }
+    if (Number.isNaN(upgrThreeVal)){
+        upgrThreeVal=0;
+    }
+    if (Number.isNaN(upgrFourVal)){
+        upgrFourVal=0;
+    }
+    if (Number.isNaN(upgrFiveVal)){
+        upgrFiveVal=0;
+    }
+    if (Number.isNaN(upgrSixVal)){
+        upgrSixVal=0;
+    }
+    save();
+    displayNumChange;
 }
 
 setInterval(myTimer, 1000);
