@@ -7,7 +7,7 @@ body {
 }
 
 .myDiv{
-    color:rgb(21, 0, 141);
+    color:rgb(81, 57, 215);
     border: 2px solid black;
     border-radius: 10px;
     text-align: center;
@@ -17,8 +17,8 @@ body {
 
 
 #myDiv2{
-    color: blue;
-    border: 2px solid black;
+    color: rgb(0, 110, 255);
+    border: 1px solid black;
     border-radius: 5px;
     background-color: aliceblue;
     padding-top: 4px;
@@ -34,7 +34,7 @@ body {
 
 .reset{
     background-color: rgb(234, 46, 46);
-    border: 2px solid black;
+    border: 0.9px solid black;
     padding:10px;
     border-radius: 3px;
     transition-duration: 0.4s;
@@ -60,10 +60,13 @@ body {
 #buttonOne{
     border-radius: 4px;
     border-color: rgb(38, 74, 255);
-    padding: 6px;
+    padding: 10px;
+    border-width: 1px;
     background-color: white;
     color: rgb(38, 74, 255);
     transition-duration: 0.4s;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #main{
