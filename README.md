@@ -1,2 +1,3 @@
 # htmlclickergame
-forked from my friends game because I felt like it could use some touch-ups (no offense tho)
+small clicker game to test html lol
+my code is spaghetti 👍
