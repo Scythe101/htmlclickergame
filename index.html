@@ -10,7 +10,7 @@
     <title>HTML Clicker</title>
 
     <link rel = stylesheet href = "style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
 </head>
 <body onload="load()">
     <p></p>
@@ -20,31 +20,31 @@
         <p>by Scythe Game Studios</p>
     </div>
     <br>
-    <center>
+    
         <div id="myDiv2">
             <p>Click the button to earn money, and use money to purchase things in the shop! Hover over an upgrade to see what it does.</p>
         </div>
     
         <br>
         <p id="cpscounter">CPS: 0</p>
-        <button onClick = "addOne()" class="btn btn-outline-success" id="main">Click Me!</button>
+        <button onClick = "addOne()" id="main">Click Me!</button>
         <p id="number">$0</p>
         <p id="cpc">Dollars per Click: 1</p>
         <p id="cps">Dollars per Second: 0</p>
         <p id="mult">Multiplier: 1x</p>
-    </center>
+    
     <div id="shop">
         <h3>Shop</h3>
-        <button onClick="buyUpgradeOne()" class="btn btn-outline-primary" id="upgradeOne" title="Increase dollars per click by 1">Upgrade Dollars / Click: $25</button>
+        <button onClick="buyUpgradeOne()" id="buttonOne" title="Increase dollars per click by 1">Upgrade Dollars per Click by 1: $25</button>
         <br>
         <br>
-        <button onClick="buyUpgradeTwo()" class="btn btn-outline-primary" id="upgradeTwo" title="Increase dollars per second by 1">Upgrade Dollars / Second: $200</button>
+        <button onClick="buyUpgradeTwo()" id="buttonOne" title="Increase dollars per second by 1">Upgrade Dollars per Second by 1: $200</button>
         <br>
         <br>
-        <button onClick="buyUpgradeThree()" class="btn btn-outline-primary" id="upgradeThree" title="Increase overall gain by 1.25x">Upgrade Multiplier: $1600</button>
+        <button onClick="buyUpgradeThree()" id="buttonOne" title="Increase overall gain by 1.25x">Upgrade Multiplier by 0.25x: $1600</button>
         <br>
         <br>
-        <button onClick="buyUpgradeFour()" class="btn btn-outline-primary" id="upgradeFour" title="Increase Dollars per click by 5">Upgrade Dollars / Click x5: $8000</button>
+        <button onClick="buyUpgradeFour()" id="buttonOne" title="Increase Dollars per click by 5">Upgrade Dollars per Click by 5: $8000</button>
     </div>
     <br>
     <hr>
@@ -52,5 +52,5 @@
 </body>
 
     <script src = "main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
 </html>

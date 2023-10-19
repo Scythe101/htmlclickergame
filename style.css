@@ -8,14 +8,10 @@ body {
     border-radius: 10px;
     text-align: center;
     background-color: rgb(185, 175, 240);
+    padding-top: 10px;
 }
 
-#main{
-    padding: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
-    
-}
+
 #myDiv2{
     color: blue;
     border: 2px solid black;
@@ -24,7 +20,7 @@ body {
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 40px;
-    max-width: 90%;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -33,10 +29,18 @@ body {
 }
 
 .reset{
-    background-color: rgb(255, 81, 81);
+    background-color: rgb(234, 46, 46);
     border: 2px solid black;
     padding:10px;
     border-radius: 3px;
+    transition-duration: 0.4s;
+}
+
+.reset:hover{
+    background-color: rgb(0, 0, 0);
+    padding:10px;
+    border-radius: 3px;
+    color: white;
 }
 
 #number{
@@ -47,4 +51,35 @@ body {
     border: 2px solid black;
     border-radius: 4px;
     padding: 10px;
+}
+
+#buttonOne{
+    border-radius: 4px;
+    border-color: rgb(38, 74, 255);
+    padding: 6px;
+    background-color: white;
+    color: rgb(38, 74, 255);
+    transition-duration: 0.4s;
+}
+
+#main{
+    background-color: white;
+    border-radius: 4px;
+    padding: 30px;
+    border-width: 0.75px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: rgb(81, 140, 81);
+    border-color: rgb(81, 140, 81);
+    transition-duration: 0.5s;
+}
+
+#main:hover{
+    background-color: rgb(81, 140, 81);
+    color: white;
+}
+
+#buttonOne:hover{
+    background-color: rgb(61, 93, 255);
+    color: white;
 }

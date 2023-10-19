@@ -118,10 +118,10 @@ function displayNumChange(){
     document.getElementById("cpc").innerHTML = "Dollars per Click: " + cpc;
     document.getElementById("cps").innerHTML = "Dollars per Second: " + cps;
     document.getElementById("mult").innerHTML = "Multiplier: " + mult + "x";
-    document.getElementById("upgradeOne").innerHTML = "Upgrade Dollars / Click: $" + 25*(2**upgrOneVal);
-    document.getElementById("upgradeTwo").innerHTML = "Upgrade Dollars / Second: $" + 200*(2**upgrTwoVal);
-    document.getElementById("upgradeThree").innerHTML = "Upgrade Multiplier: $" + 1600*(2**upgrThreeVal);
-    document.getElementById("upgradeFour").innerHTML = "Upgrade Dollars / Click x5: $" + Math.floor(8000 *(1.75**upgrFourVal));
+    document.getElementById("upgradeOne").innerHTML = "Upgrade Dollars per Click by 1: $" + 25*(2**upgrOneVal);
+    document.getElementById("upgradeTwo").innerHTML = "Upgrade Dollars per Second by 1: $" + 200*(2**upgrTwoVal);
+    document.getElementById("upgradeThree").innerHTML = "Upgrade Multiplier by 0.25x: $" + 1600*(2**upgrThreeVal);
+    document.getElementById("upgradeFour").innerHTML = "Upgrade Dollars per Click by 5: $" + Math.floor(8000 *(1.75**upgrFourVal));
 }
 
 
