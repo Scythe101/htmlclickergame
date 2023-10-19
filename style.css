@@ -57,7 +57,7 @@ body {
     padding: 10px;
 }
 
-#buttonOne{
+.buttonOne{
     border-radius: 4px;
     border-color: rgb(38, 74, 255);
     padding: 10px;
@@ -86,7 +86,7 @@ body {
     color: white;
 }
 
-#buttonOne:hover{
+.buttonOne:hover{
     background-color: rgb(61, 93, 255);
     color: white;
 }
