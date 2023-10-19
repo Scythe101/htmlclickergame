@@ -26,7 +26,8 @@ function save(){
     localStorage.setItem("upgrThreeVal", upgrThreeVal);
     localStorage.setItem("upgrFourVal", upgrFourVal);
     localStorage.setItem("mult", mult);
-    localStorage.setItem("saved", true)
+    localStorage.setItem("saved", true);
+    localStorage.setItem("goal", goal);
 }
 
 
@@ -41,6 +42,7 @@ function load(){
         upgrThreeVal = parseInt(localStorage.getItem("upgrThreeVal"));
         mult = parseFloat(localStorage.getItem("mult"));
         upgrFourVal = parseInt(localStorage.getItem("upgrFourVal"));
+        goal = parseFloat(localStorage.getItem("goal"));
         displayNumChange();
     } else {
         reset(true)
@@ -122,6 +124,7 @@ function displayNumChange(){
     document.getElementById("upgradeTwo").innerHTML = "Upgrade Dollars per Second by 1: $" + 200*(2**upgrTwoVal);
     document.getElementById("upgradeThree").innerHTML = "Upgrade Multiplier by 0.25x: $" + 1600*(2**upgrThreeVal);
     document.getElementById("upgradeFour").innerHTML = "Upgrade Dollars per Click by 5: $" + Math.floor(8000 *(1.75**upgrFourVal));
+    document.getElementById('goal').innerHTML = "Goal: $" + goal;
 }
 
 
@@ -146,9 +149,29 @@ getCPS();
 function getCPS() {
     setTimeout(function() {
         document.getElementById("cpscounter").innerHTML = "CPS: " + count;
+        estimate = Math.floor((goal-number)/(cps+count*cpc));
+        if (estimate>0) {
+            document.getElementById("est").innerHTML = "Time to goal: " + estimate;
+        }
+        else{
+            document.getElementById("est").innerHTML = "Goal Achieved";
+        }
+        
         count = 0;
         getCPS();
     }, numSec*1000);
+}
+
+function setGoal() {
+    if (document.getElementById('goalOne').value==0){
+        alert("input a value!")
+    }
+    else{
+        goal = document.getElementById('goalOne').value;
+        document.getElementById('goalOne').value = 0;
+        displayNumChange();
+        save();
+    }
 }
 
 setInterval(myTimer, 1000);

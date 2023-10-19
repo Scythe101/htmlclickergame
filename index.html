@@ -13,8 +13,8 @@
     
 </head>
 <body onload="load()">
-    <p></p>
-
+    <div id="master">
+    
     <div class="myDiv">
         <h1>HTML Clicker Game</h1>
         <p>by Scythe Game Studios</p>
@@ -32,8 +32,15 @@
             <p id="cpc">Dollars per Click: 1</p>
             <p id="cps">Dollars per Second: 0</p>
             <p id="mult">Multiplier: 1x</p>
+            <p id="goal">Goal: </p>
+            
+            <input title="Change your current goal" type="number" id="goalOne">
+            <input type="submit" id="goalTwo" onclick="setGoal()">
+            <p id="est">Time to goal: </p>
         </div>
+        <br>
     <div id="shop">
+        
         <h3>Shop</h3>
         <button onClick="buyUpgradeOne()" class="buttonOne" id="upgradeOne" title="Increase dollars per click by 1">Upgrade Dollars per Click by 1: $25</button>
         <br>
@@ -49,6 +56,7 @@
     <br>
     <hr>
     <button onClick = "reset()" class="btn btn-danger btn-outline-dark reset">Reset</button>
+</div>
 </body>
 
     <script src = "main.js"></script>
