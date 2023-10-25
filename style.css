@@ -39,7 +39,9 @@ body {
 
 #goalTwo:hover{
     background-color: rgb(0, 110, 255);
+    
     color: white;
+    
 }
 
 .myDiv{
@@ -81,6 +83,7 @@ body {
     padding:10px;
     border-radius: 3px;
     color: white;
+    cursor: pointer;
 }
 
 #number{
@@ -115,14 +118,37 @@ body {
     color: rgb(81, 140, 81);
     border-color: rgb(81, 140, 81);
     transition-duration: 0.5s;
+    position: relative;
 }
 
 #main:hover{
     background-color: rgb(81, 140, 81);
     color: white;
+    cursor: pointer;
 }
 
 .buttonOne:hover{
     background-color: rgb(61, 93, 255);
     color: white;
+    cursor: pointer;
+}
+
+span {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    position: absolute;
+    opacity: 1;
+  }
+  .rippleAnimation {
+      animation: ripple .4s linear;
+  }
+  
+  @keyframes ripple {
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
 }
