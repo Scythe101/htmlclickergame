@@ -9,6 +9,7 @@ let mult=1;
 let upgrFiveVal=0;
 let goal=0;
 let upgrSixVal=0;
+
 function addOne(){
     number += Math.floor(cpc*mult);
     displayNumChange();
@@ -195,7 +196,7 @@ function getCPS() {
 
 function setGoal() {
     if (document.getElementById('goalOne').value==0){
-        alert("input a value!")
+        
     }
     else{
         goal = document.getElementById('goalOne').value;
@@ -240,4 +241,58 @@ function fix(){
     displayNumChange;
 }
 
+function check(){
+    if (document.getElementById('goalOne').value!=0) {
+        document.getElementById("goalTwo").style.cursor = "pointer";
+    }
+    else{
+        document.getElementById("goalTwo").style.cursor = "not-allowed";
+        
+    }
+}
+
+let btn = document.getElementById('main');
+
+function ripple(e) {
+
+  // Setup
+  let posX = this.offsetLeft;
+  let posY = this.offsetTop;
+  let buttonWidth = this.offsetWidth;
+  let buttonHeight =  this.offsetHeight;
+  
+  // Add the element
+  let ripple = document.createElement('span');
+  
+  this.appendChild(ripple);
+
+  
+ // Make it round!
+  if(buttonWidth >= buttonHeight) {
+    buttonHeight = buttonWidth;
+  } else {
+    buttonWidth = buttonHeight; 
+  }
+  
+  // Get the center of the element
+  var x = e.pageX - posX - buttonWidth / 2;
+  var y = e.pageY - posY - buttonHeight / 2;
+  
+ 
+  ripple.style.width = `${buttonWidth}px`;
+  ripple.style.height = `${buttonHeight}px`;
+  ripple.style.top = `${y}px`;
+  ripple.style.left = `${x}px`;
+  
+  ripple.classList.add('rippleAnimation');
+  
+  setTimeout(() => {
+    this.removeChild(ripple);
+  }, 1000);
+
+}
+
+btn.addEventListener('click', ripple);
+
+setInterval(check, 1)
 setInterval(myTimer, 1000);
