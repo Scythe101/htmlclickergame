@@ -10,6 +10,14 @@ let upgrFiveVal=0;
 let goal=0;
 let upgrSixVal=0;
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+  
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
 function addOne(){
     number += Math.floor(cpc*mult);
     displayNumChange();
@@ -95,6 +103,8 @@ function buyUpgradeOne(){
     displayNumChange();
     save();
 }
+
+
 
 function buyUpgradeTwo(){
     if (number >= 200*(2**upgrTwoVal)){
@@ -263,7 +273,7 @@ function ripple(e) {
   
   // Add the element
   let ripple = document.createElement('span');
-  
+  ripple.id = "ripple"
   this.appendChild(ripple);
 
   
