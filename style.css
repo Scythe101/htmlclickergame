@@ -3,7 +3,6 @@ body {
     font-family: 'Verdana';
     width: 100%;
     height: 100%;
-    display: flex;
     background: linear-gradient(to right bottom,#ECEFF4,rgb(161, 176, 199));
 }
 
