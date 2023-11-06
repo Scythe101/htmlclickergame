@@ -1,6 +1,19 @@
 body {
     padding: 10px;
-    font-family: 'Lexend Deca';
+    font-family: 'Verdana';
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: linear-gradient(to right bottom,#ECEFF4,rgb(161, 176, 199));
+}
+
+a{
+  text-decoration: none;
+}
+
+html{
+    min-height: 100%;
+    min-width: 100%;
 }
 
 #master{
@@ -14,50 +27,47 @@ body {
 
 #goalOne{
     padding: 10px;
-    background-color: rgb(231, 231, 231);
+    background-color: #D8DEE9;
     transition-duration: 0.2s;
     font-size: 14px;
     border-radius: 4px;
 }
 
 #goalOne:hover{
-    background-color: rgb(243, 243, 243);
+    background-color: #E5E9F0;
 }
 
 #goalOne:focus{
-    background-color: white;
+    background-color: #ECEFF4;
 }
 
 #goalTwo{
     padding: 10px;
     transition-duration: 0.3s;
-    background-color: white;
-    color: rgb(0, 110, 255);
+    background-color: #ECEFF4;
+    color: #73a5b3;
     border-width: 1px;
-    border-color: rgb(0, 110, 255);
+    border-color: #8FBCBB;
     border-radius: 4px;
 }
 
 #goalTwo:hover{
-    background-color: rgb(0, 110, 255);
+    background-color: #8FBCBB;
     
     color: white;
     
 }
 
 .myDiv{
-    color:rgb(81, 57, 215);
-    border: 2px solid black;
+    color:#434C5E;
     border-radius: 10px;
     text-align: center;
-    background-color: rgb(185, 175, 240);
     padding-top: 10px;
 }
 
 
 #myDiv2{
-    color: rgb(0, 110, 255);
-    border: 1px solid black;
+    color: #4C566A;
     border-radius: 5px;
     background-color: aliceblue;
     padding-top: 4px;
@@ -72,15 +82,15 @@ body {
 }
 
 .reset{
-    background-color: rgb(234, 46, 46);
-    border: 0.9px solid black;
+    background-color: #BF616A;
+    border: 0.9px solid #434C5E;
     padding:10px;
     border-radius: 3px;
     transition-duration: 0.4s;
 }
 
 .reset:hover{
-    background-color: rgb(0, 0, 0);
+    background-color: #434C5E;
     padding:10px;
     border-radius: 3px;
     color: white;
@@ -92,48 +102,48 @@ body {
 }
 
 #shop{
-    border: 2px solid black;
+    border: 2px solid #3B4252;
     border-radius: 4px;
     padding: 10px;
 }
 
 .buttonOne{
     border-radius: 4px;
-    border-color: rgb(38, 74, 255);
+    border-color: #88C0D0;
     padding: 10px;
     border-width: 1px;
-    background-color: white;
-    color: rgb(38, 74, 255);
+    background-color: 
+    #ECEFF4;
+    color: #73a5b3;
     transition-duration: 0.4s;
     padding-left: 15px;
     padding-right: 15px;
 }
 
 #main{
-    background-color: white;
-    border-radius: 4px;
     padding: 30px;
-    border-width: 0.75px;
     padding-left: 50px;
     padding-right: 50px;
-    color: rgb(81, 140, 81);
-    border-color: rgb(81, 140, 81);
+    color: #A3BE8C;
     transition-duration: 0.5s;
     position: relative;
+    border: 0px;
+    border-radius: 6px;
+    background-color: #ebf0e6;
 }
 
 button{
-    font-family: 'Lexend Deca';
+    font-family: 'Verdana';
 }
 
 #main:hover{
-    background-color: rgb(81, 140, 81);
+    background-color: #A3BE8C;
     color: white;
     cursor: pointer;
 }
 
 .buttonOne:hover{
-    background-color: rgb(61, 93, 255);
+    background-color: #8FBCBB;
     color: white;
 }
 
@@ -152,11 +162,10 @@ button{
   
   @keyframes ripple {
     100% {
-      transform: scale(1);
+      transform: scale(0.5);
       opacity: 0;
     }
   }
-
 
 
 
@@ -167,7 +176,7 @@ button{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -175,17 +184,14 @@ button{
   
   .sidenav a {
     padding: 8px 8px 8px 32px;
-    text-decoration: none;
+    
     font-size: 25px;
-    color: #dedede;
+    
     display: block;
     transition: 0.3s;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
-  .sidenav a:hover {
-    color: #ffffff;
-  }
   
   .sidenav .closebtn {
     position: absolute;
@@ -200,6 +206,43 @@ button{
     .sidenav a {font-size: 18px;}
   }
   
-  #menu{
+  span{
     padding-left: 12px;
+  }
+  
+  @media screen and (max-width:680px){
+    .projects{
+      width: 100%;
+    }
+    #space{
+      width: 0%;
+      height:4px;
+    }
+  }
+  
+  .sidenav{
+    background-color: #3B4252;
+    color: #ced4de;
+  }
+  .sidenav a{
+    color: #ced4de;
+  }
+  .sidenav a:hover{
+    color: white;
+  }
+  
+  #blacklink:visited{
+    color: rgb(75 85 105);
+    
+  }
+  
+  #blacklink:link{
+    color: rgb(75 85 105);
+    
+  }
+
+  #menuButton{
+    font-size:30px;
+    cursor:pointer;
+    position: fixed;
   }

@@ -16,7 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lexend Deca' rel='stylesheet'>
 </head>
 <body onload="load()">
-    <div id="mySidenav" class="sidenav">
+    <div id="mySidenav" class="sidenav" onmouseleave="closeNav()">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="https://scythe101.github.io">Home</a>
         <a href="https://scythe101.github.io/htmlclickergame">HTML Clicker Game</a>
@@ -25,8 +25,11 @@
         <a href="https://scythe101.github.io/scythes_shmup/">Scythe's Shmup</a>
         <a href="https://scythe101.github.io/scythe-os/">Scythe OS</a>
         <a href="https://scythe101.github.io/ninja_platformer">Ninja Platformer</a>
-    </div>
-    <span id="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        
+      </div>
+    
+    
+      <span onmouseover="teaseNav()" onmouseleave="closeTeasedNav()" id="menuButton" onclick="openNav()">&#9776;</span>
     
     <div id="master">
         
